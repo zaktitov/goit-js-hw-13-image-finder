@@ -2,67 +2,85 @@ body {
   font-family: Roboto, sans-serif;
 }
 
-ul {
-  list-style: none;
-}
-
-span {
-  display: inline-block;
-  margin-left: 5px;
-}
-
 h1 {
   text-align: center;
 }
 
-.language {
-  margin-top: 0;
+.search-form {
+  margin-top: 40px;
+  text-align: center;
 }
 
-.languages__list {
-  padding-left: 5px;
-  display: inline-block;
+ul {
+  list-style: none;
 }
 
-.wrapper {
+.gallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.input {
+.gallery__item {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+input {
+  display: block;
   width: 300px;
-  height: 20px;
+  margin: 0 auto;
+  height: 30px;
   padding: 5px;
-  border: steelblue 2px solid;
+  border: mediumaquamarine 2px solid;
   border-radius: 3px;
 }
 
-.label {
+label {
   display: block;
-  width: 300px;
-  background-color: transparent;
-  text-align: center;
-  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-.country__item:nth-child(3) {
+#btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  margin: 0 auto;
+  padding: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+  color: white;
+  background-color: mediumaquamarine;
+  border-radius: 3px;
+  border: mediumaquamarine 1px solid;
+  -webkit-transition: all ease-in 250ms;
+  transition: all ease-in 250ms;
+}
+
+#btn:hover,
+#btn:focus {
+  background-color: white;
+  color: mediumaquamarine;
 }
 /*# sourceMappingURL=main.css.map */
