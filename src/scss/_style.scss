@@ -1,0 +1,54 @@
+body {
+  font-family: Roboto, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+span {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.language {
+  margin-top: 0;
+}
+
+.languages__list {
+  padding-left: 5px;
+  display: inline-block;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+}
+
+.input {
+  width: 300px;
+  height: 20px;
+  padding: 5px;
+  border: steelblue 2px solid;
+  border-radius: 3px;
+}
+
+.label {
+  display: block;
+  width: 300px;
+  background-color: transparent;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.country__item:nth-child(3){
+  display: flex;
+  align-items: flex-start;
+}

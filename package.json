@@ -1,0 +1,38 @@
+{
+  "name": "goit-js-hw-12-countries",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".posthtmlrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /goit-js-hw-12-countries/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaktitov/goit-js-hw-12-countries.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaktitov/goit-js-hw-12-countries/issues"
+  },
+  "homepage": "https://zaktitov.github.io/goit-js-hw-12-countries",
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "lod": "^0.1.0",
+    "lodash.debounce": "^4.0.8",
+    "modern-normalize": "^1.1.0",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "posthtml-include": "^1.7.2"
+  },
+  "devDependencies": {
+    "@pnotify/core": "^5.2.0",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "sass": "^1.43.2"
+  }
+}
