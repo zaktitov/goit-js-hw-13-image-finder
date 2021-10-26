@@ -12,7 +12,6 @@ btn.addEventListener("click", loadMore);
 
 function onSearch(e) {
   newApiService.query = e.target.value;
-  
 
   if (newApiService.query !== "") {
     newApiService.resetPage();
@@ -30,12 +29,15 @@ function onSearch(e) {
 
 function loadMore(e) {
   e.preventDefault();
-  if (newApiService.query !== "") {
-    newApiService.fetchImages().then(creatCard).then(handleBtnClick);
-    btn.removeEventListener("click", notifications.showNotice);
-  } else {
-    btn.addEventListener("click", notifications.showNotice);
-  }
+
+  setTimeout(() => {
+    if (newApiService.query !== "") {
+      newApiService.fetchImages().then(creatCard).then(handleBtnClick);
+      btn.removeEventListener("click", notifications.showNotice);
+    } else {
+      btn.addEventListener("click", notifications.showNotice);
+    }
+  }, 100);
 }
 
 function creatCard(image) {
