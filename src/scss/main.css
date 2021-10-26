@@ -42,6 +42,7 @@ ul {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding: 0;
 }
 
 .gallery__item {
