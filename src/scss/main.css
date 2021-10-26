@@ -13,6 +13,7 @@ h1 {
 
 ul {
   list-style: none;
+  margin-bottom: 0;
 }
 
 .gallery {
@@ -30,14 +31,18 @@ ul {
   margin-bottom: 50px;
 }
 
+i {
+  width: 24px;
+  margin-right: 3px;
+}
+
 .stats {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 input {
@@ -48,6 +53,16 @@ input {
   padding: 5px;
   border: mediumaquamarine 2px solid;
   border-radius: 3px;
+  -webkit-transition: all ease-in 250ms;
+  transition: all ease-in 250ms;
+}
+
+a {
+  color: mediumaquamarine;
+}
+
+input:hover {
+  border-color: black;
 }
 
 label {
@@ -55,6 +70,11 @@ label {
   font-weight: 500;
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+.btn__container {
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 #btn {
@@ -69,13 +89,13 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 25px;
   color: white;
   background-color: mediumaquamarine;
   border-radius: 3px;
   border: mediumaquamarine 1px solid;
   -webkit-transition: all ease-in 250ms;
   transition: all ease-in 250ms;
+  margin-bottom: 20px;
 }
 
 #btn:hover,

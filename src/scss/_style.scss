@@ -13,12 +13,13 @@ h1 {
 
 ul {
   list-style: none;
+  margin-bottom: 0;
 }
 
-.gallery{
+.gallery {
   display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .gallery__item {
@@ -26,10 +27,14 @@ justify-content: space-around;
   margin-bottom: 50px;
 }
 
+i {
+  width: 24px;
+  margin-right: 3px;
+}
+
 .stats {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 input {
@@ -40,6 +45,15 @@ input {
   padding: 5px;
   border: mediumaquamarine 2px solid;
   border-radius: 3px;
+  transition: all ease-in 250ms;
+}
+
+a{
+  color: mediumaquamarine;
+}
+
+input:hover {
+  border-color: black;
 }
 
 label {
@@ -49,18 +63,23 @@ label {
   margin-bottom: 10px;
 }
 
+.btn__container {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
 #btn {
   display: flex;
   margin: 0 auto;
   padding: 5px;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
   color: white;
   background-color: mediumaquamarine;
   border-radius: 3px;
   border: mediumaquamarine 1px solid;
   transition: all ease-in 250ms;
+  margin-bottom: 20px;
 }
 
 #btn:hover,
