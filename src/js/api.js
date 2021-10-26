@@ -9,6 +9,7 @@ const newApiService = new NewApiService();
 const notifications = new Notifications();
 input.addEventListener("input", debounce(onSearch, 700));
 btn.addEventListener("click", loadMore);
+window.addEventListener("keydown", blockEnterReset);
 
 function onSearch(e) {
   newApiService.query = e.target.value;
@@ -61,4 +62,10 @@ function handleBtnClick() {
   });
 }
 
-window.addEventListener("keydown", (e) => {});
+function blockEnterReset(e) {
+  const keyValue = e.code;
+
+  if (keyValue === "Enter") {
+    e.preventDefault();
+  }
+}
