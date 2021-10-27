@@ -1,6 +1,5 @@
 body {
   font-family: Roboto, sans-serif;
-  
 }
 
 h1 {
@@ -88,12 +87,9 @@ label {
   margin-bottom: 5px;
 }
 
-#btn {
-  display: flex;
+.btn {
   margin: 0 auto;
   padding: 5px;
-  justify-content: center;
-  align-items: center;
   color: white;
   background-color: mediumaquamarine;
   border-radius: 3px;

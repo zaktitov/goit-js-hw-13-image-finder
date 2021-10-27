@@ -10,6 +10,7 @@ const notifications = new Notifications();
 input.addEventListener("input", debounce(onSearch, 700));
 btn.addEventListener("click", loadMore);
 window.addEventListener("keydown", blockEnterReset);
+btn.style.display = "none";
 
 function onSearch(e) {
   newApiService.query = e.target.value;
@@ -23,6 +24,7 @@ function onSearch(e) {
         notifications.showError();
       });
     notifications.showSuccess();
+    btn.style.display = "block";
   }
 
   resetMrkUp();
@@ -30,15 +32,7 @@ function onSearch(e) {
 
 function loadMore(e) {
   e.preventDefault();
-
-  setTimeout(() => {
-    if (newApiService.query !== "") {
-      newApiService.fetchImages().then(creatCard).then(handleBtnClick);
-      btn.removeEventListener("click", notifications.showNotice);
-    } else {
-      btn.addEventListener("click", notifications.showNotice);
-    }
-  }, 100);
+  newApiService.fetchImages().then(creatCard).then(handleBtnClick);
 }
 
 function creatCard(image) {
@@ -53,13 +47,18 @@ function createMkUp(image) {
 
 function resetMrkUp() {
   ul.innerHTML = "";
+  if (newApiService.query === "") {
+    btn.style.display = "none";
+  }
 }
 
 function handleBtnClick() {
-  btn.scrollIntoView({
-    behavior: "smooth",
-    block: "end",
-  });
+  setTimeout(() => {
+    btn.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
+  }, 800);
 }
 
 function blockEnterReset(e) {
