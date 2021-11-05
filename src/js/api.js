@@ -24,7 +24,7 @@ function onSearch(e) {
         notifications.showError();
       });
     notifications.showSuccess();
-    btn.style.display = "block";
+    // btn.style.display = "block";
   }
 
   resetMrkUp();
@@ -68,3 +68,25 @@ function blockEnterReset(e) {
     e.preventDefault();
   }
 }
+
+const callback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting && newApiService.query !== "") {
+      newApiService
+        .fetchImages()
+        .then(creatCard)
+        .catch((error) => {
+          notifications.showError();
+        });
+    }
+  });
+};
+
+const options = {
+  rootMargin: "200px",
+  // threshold: 0.5,
+};
+
+const observer = new IntersectionObserver(callback, options);
+
+observer.observe(document.querySelector(".observer"));
