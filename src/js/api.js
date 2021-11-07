@@ -8,9 +8,10 @@ const { input, btn, ul } = refs;
 const newApiService = new NewApiService();
 const notifications = new Notifications();
 input.addEventListener("input", debounce(onSearch, 700));
-btn.addEventListener("click", loadMore);
+refs.btn.addEventListener("click", loadMore);
 window.addEventListener("keydown", blockEnterReset);
-btn.style.display = "none";
+refs.btn.style.display = "none";
+
 
 function onSearch(e) {
   newApiService.query = e.target.value;
@@ -24,7 +25,7 @@ function onSearch(e) {
         notifications.showError();
       });
     notifications.showSuccess();
-    // btn.style.display = "block";
+    // refs.btn.style.display = "block";
   }
 
   resetMrkUp();
@@ -48,7 +49,7 @@ function createMkUp(image) {
 function resetMrkUp() {
   ul.innerHTML = "";
   if (newApiService.query === "") {
-    btn.style.display = "none";
+    refs.btn.style.display = "none";
   }
 }
 
