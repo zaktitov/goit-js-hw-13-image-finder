@@ -6,16 +6,28 @@ export default class NewApiService {
     this.page = 1;
   }
 
-  fetchImages() {
-    const url = `${BASE_URL}image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${myKeY}`;
+  async fetchImages() {
+    const searchParams = new URLSearchParams({
+      image_type: "photo",
+      orientation: "horizontal",
+      q: this.searchQuery,
+      page: this.page,
+      per_page: 12,
+      key: myKeY,
+    });
+    const url = `${BASE_URL}${searchParams}`;
 
-    return fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        this.increasePage();
-        return data.hits;
-        
-      });
+    const response = await fetch(url);
+    const dataImages = await response.json();
+
+    return await dataImages.hits;
+
+    // return fetch(url)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     this.increasePage();
+    //     return data.hits;
+    //   });
   }
 
   increasePage() {

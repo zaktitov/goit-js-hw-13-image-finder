@@ -7,28 +7,34 @@ const { input, btn, ul } = refs;
 
 const newApiService = new NewApiService();
 const notifications = new Notifications();
-input.addEventListener("input", debounce(onSearch, 700));
+input.addEventListener("input", debounce(onSearch, 500));
 refs.btn.addEventListener("click", loadMore);
 window.addEventListener("keydown", blockEnterReset);
 refs.btn.style.display = "none";
 
-
-function onSearch(e) {
+async function onSearch(e) {
   newApiService.query = e.target.value;
 
   if (newApiService.query !== "") {
     newApiService.resetPage();
-    newApiService
-      .fetchImages()
-      .then(creatCard)
-      .catch((error) => {
-        notifications.showError();
-      });
+    ftIMg()
+    // newApiService
+    //   .fetchImages()
+    //   .then(creatCard)
+    //   .catch((error) => {
+    //     notifications.showError();
+    //   });
     notifications.showSuccess();
     // refs.btn.style.display = "block";
   }
 
   resetMrkUp();
+}
+
+async function ftIMg() {
+  try {
+    creatCard(await newApiService.fetchImages());
+  } catch (error) {}
 }
 
 function loadMore(e) {
@@ -73,12 +79,14 @@ function blockEnterReset(e) {
 const callback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting && newApiService.query !== "") {
-      newApiService
-        .fetchImages()
-        .then(creatCard)
-        .catch((error) => {
-          notifications.showError();
-        });
+
+      ftIMg()
+      // newApiService
+      //   .fetchImages()
+      //   .then(creatCard)
+      //   .catch((error) => {
+      //     notifications.showError();
+      //   });
     }
   });
 };
